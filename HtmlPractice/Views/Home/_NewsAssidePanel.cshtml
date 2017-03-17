@@ -1,0 +1,14 @@
+﻿@model List<HtmlPractice.Database.NewsInfo>
+
+
+@if (Model != null && Model.Count() > 0)
+{
+    foreach (var item in Model)
+    {
+        <section class="row">
+            <img class="col-md-2 img-responsive img-rounded" src="@Url.Content(item.NewsImagePath)" style="padding:0px" />
+            <a class="col-md-10" href="#@item.Serial" style="padding:0px"><strong>@item.Subject</strong></a>
+        </section>
+        <hr />
+    }
+}

@@ -1,0 +1,26 @@
+﻿@model List<HtmlPractice.Database.NewsInfo>
+
+@if(Model != null && Model.Count() > 0)
+{
+    foreach (var item in Model)
+    {
+        <section id="@item.Serial" class="row">
+            <!--partialview-->
+            <article class="col-md-12 container-fluid">
+                <header class="row">
+                    <h2 class="col-md-12">@item.Subject</h2>
+                </header>
+                <section class="row">
+                    <img class="col-md-3 hidden-sm img-responsive img-rounded" src="@Url.Content(item.NewsImagePath)" />
+                    <p class="col-md-9 col-sm-12">
+                        @Html.Raw(item.Content)
+                    </p>
+                </section>
+                <footer class="row">
+                    <p class="col-md-12 text-right">@item.Publisher<time>@item.CreateTime.Value.ToString("yyyy/MM/dd")</time></p>
+                </footer>
+            </article>
+        </section>
+        <hr />
+    }
+}
