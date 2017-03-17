@@ -30,13 +30,16 @@
             </div>
         </div>
     </nav>
-    <section class="container body-content">
+    <main class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 應用程式</p>
-        </footer>
-    </section>
+    </main>
+    <hr />
+    <footer>
+        <details>
+            <summary>&copy; @DateTime.Now.Year - 我的 ASP.NET 應用程式</summary>
+            <p>版權所有，翻錄必究</p>
+        </details>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
