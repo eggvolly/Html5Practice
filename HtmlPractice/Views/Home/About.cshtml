@@ -62,10 +62,12 @@
     <section>
         <button type="button" onclick="getLocation()" class="btn btn-default">定位</button>
         <p id="demo"></p>
+        <div id="map" style="width:400px;height:400px"></div>
     </section>
 </article>
 
 @section Scripts{
+
     <script type="text/javascript">
         function DrawStar() {
             var c = document.getElementById("canvaspanel");
@@ -130,7 +132,6 @@
             var x = document.getElementById("demo");
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(showPosition);
-                console.log(navigator.geolocation.toLocaleString())
             } else {
                 x.innerHTML = "Geolocation is not supported by this browser.";
             }
@@ -140,6 +141,22 @@
             var x = document.getElementById("demo");
             x.innerHTML = "Latitude: " + position.coords.latitude +
             "<br>Longitude: " + position.coords.longitude;
+            var mapOptions = {
+                center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+                zoom: 15,
+                mapTypeId: google.maps.MapTypeId.HYBRID
+            }
+            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        };
+
+        function myMap() {
+            var mapOptions = {
+                center: new google.maps.LatLng(51.5, -0.12),
+                zoom: 10,
+                mapTypeId: google.maps.MapTypeId.HYBRID
+            }
+            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
         }
     </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5TLnGf4v8MDXxQocyHxmAqgIqV8-FGGM&callback=myMap"></script>
 }
