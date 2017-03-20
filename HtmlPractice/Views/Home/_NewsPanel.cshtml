@@ -1,7 +1,8 @@
 ﻿@model List<HtmlPractice.Database.NewsInfo>
 
-@if(Model != null && Model.Count() > 0)
+@if (Model != null && Model.Count() > 0)
 {
+    int count = 0;
     foreach (var item in Model)
     {
         <section id="@item.Serial" class="row">
@@ -11,7 +12,7 @@
                     <h2 class="col-md-12">@item.Subject</h2>
                 </header>
                 <section class="row">
-                    <p class="col-md-3"><mark>@item.CreateUserName 記者台北報導</mark></p> 
+                    <p class="col-md-3"><mark>@item.CreateUserName 記者台北報導</mark></p>
                     <div class="col-md-9 row">
                         <a href="#" class="col-md-1"><img class="img-responsive" style="height:18px" src="~/Images/googleplus.png" data-toggle="tooltip" title="分享至google" /></a>
                         <a href="#" class="col-md-1"><img class="img-responsive" style="height:18px" src="~/Images/facebook_icon.jpg" data-toggle="tooltip" title="分享至facebook" /></a>
@@ -22,8 +23,8 @@
                 <section class="row">
                     <figure class="col-md-3 hidden-sm">
                         <img class="img-responsive img-rounded" src="@Url.Content(item.NewsImagePath)" />
-                        <figcaption class="text-center">@item.Subject.Substring(0,8)</figcaption>
-                    </figure>                 
+                        <figcaption class="text-center">@item.Subject.Substring(0, 8)</figcaption>
+                    </figure>
                     <p class="col-md-9 col-sm-12">
                         @Html.Raw(item.Content)
                     </p>
@@ -33,6 +34,10 @@
                 </footer>
             </article>
         </section>
-        <hr />
+        count++;
+        if (count < Model.Count())
+        {
+            <hr />
+        }
     }
 }

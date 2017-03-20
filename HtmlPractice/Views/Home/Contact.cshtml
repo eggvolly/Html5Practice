@@ -1,17 +1,93 @@
-﻿@{
-    ViewBag.Title = "Contact";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+﻿<section class="row">
+    <header>
+        <h1>SVG tag</h1>
+    </header>
+    <article class="col-md-12 container-fluid">
+        <header class="row">
+            <h3 class="col-md-12">範例</h3>
+        </header>
+        <section class="row container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <svg width="200" height="80">
+                        <rect x="10" y="10" width="180" height="60" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+                    </svg>
+                </div>
+                <div class="col-md-4">
+                    <svg width="300" height="200">
+                        <polygon points="100,10 40,198 190,78 10,78 160,198"
+                                 style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+                    </svg>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+                </div>
+                <div class="col-md-4">
+                    <svg height="130" width="500">
+                        <defs>
+                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+                        <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">SVG</text>
+                        Sorry, your browser does not support inline SVG.
+                    </svg>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4" style="background-color:lightyellow">
+                    <svg>
+                        <circle cx="12" cy="10" r="5" />
+                        <circle cx="38" cy="10" r="5" />
+                        <circle cx="25" cy="26" r="10" />
+                        <rect x="15" y="15" width="20" height="10" fill="white" />
+                    </svg>
+                </div>
+                <div class="col-md-4">
+                    <svg style="width:100%; height:150px">
+                        <circle cx="9" cy="10" r="4" fill="darkred" stroke="deeppink" stroke-width="2" />
+                        <circle cx="7" cy="8" r="1.5" fill="white" />
+                        <circle cx="41" cy="10" r="4" fill="darkred" stroke="deeppink" stroke-width="2" />
+                        <circle cx="39" cy="8" r="1.5" fill="white" />
+                        <circle cx="22.3" cy="23" r="3" fill="none" stroke="black" stroke-width="1" />
+                        <circle cx="27.7" cy="23" r="3" fill="none" stroke="black" stroke-width="1" />
+                        <rect x="10" y="17" width="30" height="7" fill="white" />
+                    </svg>
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+        </section>
+        <footer class="row">
+            <details class="col-md-12">
+                <summary>
+                    <strong>Notice</strong>
+                    <ol>
+                        <li>SVG-利用標籤(tag)來作圖</li>
+                        <li>x, y:調整位移；rx, ry:調整邊框圓弧的程度</li>
+                        <li>SVG填色方式分為nonzero跟evenodd，會根據繪圖(畫線順序)方向調整</li>
+                    </ol>
+                </summary>
+            </details>
+        </footer>
+    </article>
+</section>
+<hr />
+<section class="row">
+    <header>
+        <h1>Video tag</h1>
+    </header>
+    <article class="col-md-12 container-fluid">
+        <header class="row">
+            <h3 class="col-md-12">範例</h3>
+        </header>
+        <section class="row">
+            <video class="col-md-6 col-sm-12" controls>
+                <source src="~/Images/testing.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <iframe class="col-md-6 col-sm-12" style="height:312px" src="https://www.youtube.com/embed/Fn7NLWHJw4s?list=PLM9sicmPfdnykRBevGead0ZcMXHDWI4QW?ecver=2"></iframe>
+        </section>
+    </article>
+</section>

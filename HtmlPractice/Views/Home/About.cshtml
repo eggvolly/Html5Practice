@@ -65,6 +65,27 @@
         <div id="map" style="width:400px;height:400px"></div>
     </section>
 </article>
+<hr />
+<article class="row">
+    <header>
+        <h1>Output tag</h1>
+    </header>
+    <section>
+        <form class="form form-inline" oninput="out.value = parseInt(intone.value) + parseInt(inttwo.value)">
+            <div class="form-group">
+                <label>數字1</label>
+                <input type="text" id="intone" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>數字2</label>
+                <input type="text" id="inttwo" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>數字1+數字2=<output id="out"></output></label>
+            </div>
+        </form>
+    </section>
+</article>
 
 @section Scripts{
 
@@ -144,7 +165,7 @@
             var mapOptions = {
                 center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
                 zoom: 15,
-                mapTypeId: google.maps.MapTypeId.HYBRID
+                mapTypeId: google.maps.MapTypeId.ROADMAP
             }
             var map = new google.maps.Map(document.getElementById("map"), mapOptions);
         };

@@ -184,6 +184,7 @@
     <Content Include="Images\news-iphone.png" />
     <Content Include="Images\news_asus.jpg" />
     <Content Include="Images\news_sony.jpg" />
+    <Content Include="Images\testing.mp4" />
     <Content Include="Images\wordcard1.jpg" />
     <Content Include="Images\wordcard2.jpg" />
     <Content Include="Images\wordcard3.jpg" />
