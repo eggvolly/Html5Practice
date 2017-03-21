@@ -1,18 +1,20 @@
-﻿<section class="row">
-    <header>
-        <h1>
-            My Html5 Exercise<small><time>@DateTime.Now.ToString("yyyy/MM/dd")</time></small>
-        </h1>
-    </header>
-    <nav>
-        <a href="https://news.google.com.tw/news?pz=1&hl=zh-TW&tab=nn">Yahoo</a>|
-        <a href="https://tw.news.yahoo.com/">Google</a>|
-        <a href="http://www.ettoday.net/">EToday</a>
-    </nav>
-    <article class="col-md-9 col-sm-12">
+﻿<style>
+    .affix{
+        max-width:295px;
+        padding-left:10px;
+    }
+</style>
+
+<section class="row">
+    <article class="col-md-9 col-sm-12 container-fluid">
         <header class="row">
-            <h2 class="col-md-12"><mark><strong>新聞內容</strong></mark></h2>
+            <h2 class="col-md-12"><mark><strong>新聞內容</strong></mark><small><time>@DateTime.Now.ToString("yyyy/MM/dd")</time></small></h2>
         </header>
+        <nav class="row">
+            <a href="https://news.google.com.tw/news?pz=1&hl=zh-TW&tab=nn">Yahoo</a>|
+            <a href="https://tw.news.yahoo.com/">Google</a>|
+            <a href="http://www.ettoday.net/">EToday</a>
+        </nav>
         <div id="NewsInfo">
 
         </div>
@@ -43,13 +45,17 @@
             <p class="col-md-12 text-center">&copy;Google News</p>
         </footer>
     </article>
-    <aside id="AsidePanel" class="col-md-3 hidden-sm">
-        <!--partcial view-->
-        @*<section class="row">
-            <img class="col-md-2 img-responsive img-rounded" src="~/Images/news_asus.jpg" style="padding:0px" />
-            <a class="col-md-10" href="#" style="padding:0px"><strong>華碩推世界最輕14吋筆電ASUSPRO B9440</strong></a>
-        </section>*@
-    </aside>
+    <div class="col-md-3 hidden-xs" style="margin-top:20px">
+        <section data-spy="affix" class="row" data-offset-top="300">
+            <h4>焦點新聞</h4>
+            <aside id="AsidePanel"></aside>
+            <!--partcial view-->
+            @*<section class="row">
+                    <img class="col-md-2 img-responsive img-rounded" src="~/Images/news_asus.jpg" style="padding:0px" />
+                    <a class="col-md-10" href="#" style="padding:0px"><strong>華碩推世界最輕14吋筆電ASUSPRO B9440</strong></a>
+                </section>*@
+        </section>
+    </div>
 </section>
 
 

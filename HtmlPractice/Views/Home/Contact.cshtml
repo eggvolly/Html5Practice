@@ -1,4 +1,18 @@
-﻿<section class="row">
+﻿<style>
+    video::-internal-media-controls-download-button {
+        display: none;
+    }
+
+    video::-webkit-media-controls-enclosure {
+        overflow: hidden;
+    }
+
+    video::-webkit-media-controls-panel {
+        width: calc(100% + 30px); /* Adjust as needed */
+    }
+</style>
+
+<section class="row">
     <header>
         <h1>SVG tag</h1>
     </header>
@@ -63,12 +77,12 @@
             <details class="col-md-12">
                 <summary>
                     <strong>Notice</strong>
-                    <ol>
-                        <li>SVG-利用標籤(tag)來作圖</li>
-                        <li>x, y:調整位移；rx, ry:調整邊框圓弧的程度</li>
-                        <li>SVG填色方式分為nonzero跟evenodd，會根據繪圖(畫線順序)方向調整</li>
-                    </ol>
                 </summary>
+                <ol>
+                    <li>SVG-利用標籤(tag)來作圖</li>
+                    <li>x, y:調整位移；rx, ry:調整邊框圓弧的程度</li>
+                    <li>SVG填色方式分為nonzero跟evenodd，會根據繪圖(畫線順序)方向調整</li>
+                </ol>
             </details>
         </footer>
     </article>
@@ -89,5 +103,45 @@
             </video>
             <iframe class="col-md-6 col-sm-12" style="height:312px" src="https://www.youtube.com/embed/Fn7NLWHJw4s?list=PLM9sicmPfdnykRBevGead0ZcMXHDWI4QW?ecver=2"></iframe>
         </section>
+        <footer>
+            <details>
+                <summary>
+                    <strong>Notice</strong>
+                </summary>
+                <ul>
+                    <li>chrome55版後，預設video tag的controls會有下載鈕，需另外移除</li>
+                </ul>
+            </details>
+        </footer>
     </article>
+</section>
+<hr />
+<section class="row">
+    <header><h1>Local Storage vs App Cache</h1></header>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td style="width:50%">Local Storage</td>
+                <td style="width:50%">Application Cache</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>利用client端的瀏覽器儲存資料</td>
+                <td>允許離線瀏覽</td>
+            </tr>
+            <tr>
+                <td>行為類似cookie，但能儲存較多的資料(5MB)，且此儲存資料不會傳到Server端</td>
+                <td>加快瀏覽速度</td>
+            </tr>
+            <tr>
+                <td>利用Json格式儲存資料</td>
+                <td>減少server負擔</td>
+            </tr>
+            <tr>
+                <td><code>localStorage.setItem("lastname", "Smith");</code><br /><code>document.getElementById("result").innerHTML = localStorage.getItem("lastname");</code></td>
+                <td><code>@String.Format("<html manifest=\"demo.appcache\">")</code></td>
+            </tr>
+        </tbody>
+    </table>
 </section>
