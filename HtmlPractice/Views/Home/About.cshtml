@@ -37,6 +37,7 @@
         <img id="drag1" src="~/Images/wordcard1.jpg" draggable="true" ondragstart="drag(event)" width="100" height="60">
         <img id="drag3" src="~/Images/wordcard3.jpg" draggable="true" ondragstart="drag(event)" width="120" height="60">
         <img id="drag2" src="~/Images/wordcard2.jpg" draggable="true" ondragstart="drag(event)" width="100" height="60">
+        <p id="111" style="width:100px;height:50px;background-color:red" draggable="true" ondragstart="drag(event)">111</p>
     </section>
     <section class="row">
         <button type="button" class="btn btn-primary" onclick="CheckBtn()">檢查</button>
@@ -71,7 +72,7 @@
         <h1>Output tag</h1>
     </header>
     <section>
-        <form class="form form-inline" oninput="out.value = parseInt(intone.value) + parseInt(inttwo.value)">
+        <form class="form form-inline" oninput="alert('111')">
             <div class="form-group">
                 <label>數字1</label>
                 <input type="number" id="intone" class="form-control" />
